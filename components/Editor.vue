@@ -4,7 +4,7 @@
       <mavon-editor
         :toolbars="markdownOption"
         language="ja"
-        placeholder=""
+        placeholder="input text..."
         v-model="model"
       />
     </no-ssr>
