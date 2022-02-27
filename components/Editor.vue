@@ -1,8 +1,14 @@
 <template>
   <div class="markdown-editor">
     <no-ssr>
-      <mavon-editor :toolbars="markdownOption" language="ja" v-model="model" />
+      <mavon-editor
+        :toolbars="markdownOption"
+        language="ja"
+        placeholder=""
+        v-model="model"
+      />
     </no-ssr>
+    <button type="button" @click="onCopy(model)" class="register">Copy</button>
   </div>
 </template>
 
@@ -12,6 +18,11 @@ export default {
     model: {
       type: Object | null,
       default: null,
+    },
+  },
+  methods: {
+    onCopy(text) {
+      this.$copyText(text);
     },
   },
   data() {
